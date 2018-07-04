@@ -20,9 +20,7 @@ namespace AutoDisplayChanger
                 if (Process.GetProcessesByName("vlc").Length > 0)
                 {
                     started = true;
-                    DisplayChanger.Start();
-                   
-                    Console.WriteLine("test");
+                    DisplayChanger.Start();                 
                 }
                 else
                 {
@@ -31,7 +29,6 @@ namespace AutoDisplayChanger
                         DisplayChanger.Kill();
                     }
                     catch { }
-                    Console.WriteLine("test2");
                     started = false;
                 }
             }
