@@ -1,0 +1,15 @@
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\bin\Debug\AutoDisplayChangerConfig.exe.config
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\bin\Debug\AutoDisplayChangerConfig.exe
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\bin\Debug\AutoDisplayChangerConfig.pdb
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\AutoDisplayChangerConfig.csprojResolveAssemblyReference.cache
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\MainWindow.g.cs
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\App.g.cs
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\AutoDisplayChangerConfig_MarkupCompile.cache
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\AutoDisplayChangerConfig_MarkupCompile.lref
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\MainWindow.baml
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\AutoDisplayChangerConfig.g.resources
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\AutoDisplayChangerConfig.Properties.Resources.resources
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\AutoDisplayChangerConfig.csproj.GenerateResource.Cache
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\AutoDisplayChangerConfig.csproj.CoreCompileInputs.cache
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\AutoDisplayChangerConfig.exe
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\AutoDisplayChangerConfig.pdb

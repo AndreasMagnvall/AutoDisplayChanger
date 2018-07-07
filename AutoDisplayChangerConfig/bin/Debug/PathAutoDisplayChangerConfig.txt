@@ -1,0 +1,2 @@
+VideoStartedSetting:Primary screen
+VideoClosedSetting:Primary screen

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDisplayChanger", "AutoDisplayChanger\AutoDisplayChanger.csproj", "{6FC092A5-3E38-4F76-B42F-3A6BD5D1F8C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDisplayChangerConfig", "AutoDisplayChangerConfig\AutoDisplayChangerConfig.csproj", "{A7B8B349-822F-4E1F-A7DF-09044172914E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6FC092A5-3E38-4F76-B42F-3A6BD5D1F8C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FC092A5-3E38-4F76-B42F-3A6BD5D1F8C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FC092A5-3E38-4F76-B42F-3A6BD5D1F8C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7B8B349-822F-4E1F-A7DF-09044172914E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7B8B349-822F-4E1F-A7DF-09044172914E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7B8B349-822F-4E1F-A7DF-09044172914E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7B8B349-822F-4E1F-A7DF-09044172914E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

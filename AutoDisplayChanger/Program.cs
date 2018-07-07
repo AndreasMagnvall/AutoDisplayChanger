@@ -24,11 +24,6 @@ namespace AutoDisplayChanger
                 }
                 else
                 {
-                    try
-                    {
-                        DisplayChanger.Kill();
-                    }
-                    catch { }
                     started = false;
                 }
             }
@@ -42,7 +37,7 @@ namespace AutoDisplayChanger
             CreateNoWindow = true,
             WindowStyle = ProcessWindowStyle.Hidden,
             FileName = @"C:\Windows\Sysnative\DisplaySwitch.exe",
-            Arguments = "/mirror"
+            Arguments = "/extend"
         }
         };
 
