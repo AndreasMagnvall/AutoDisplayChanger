@@ -30,7 +30,7 @@ namespace AutoDisplayChangerConfig
             VideoStartedComboBox.SelectedIndex = 0;
             VideoClosedCombobox.SelectedIndex = 0;
 
-            appName = System.AppDomain.CurrentDomain.FriendlyName;
+            appName = AppDomain.CurrentDomain.FriendlyName;
             appPath = AppDomain.CurrentDomain.BaseDirectory + appName;
         }
 
