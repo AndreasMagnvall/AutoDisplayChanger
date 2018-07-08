@@ -38,8 +38,7 @@ namespace AutoDisplayChanger
                 {
                     started = false;
                 }
-            }
-                    
+            }                  
         }
 
         private static Process DisplayChanger = new Process

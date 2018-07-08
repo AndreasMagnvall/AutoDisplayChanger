@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using System.Windows.Forms;
+using Microsoft.WindowsAPICodePack.Dialogs;
+
 namespace AutoDisplayChangerConfig
 {
     /// <summary>
@@ -23,6 +26,7 @@ namespace AutoDisplayChangerConfig
     {
         string appName;
         string appPath;
+
 
         public MainWindow()
         {
@@ -39,31 +43,78 @@ namespace AutoDisplayChangerConfig
             string path = PathTextBox.Text;
             string videoStartedSetting = VideoStartedComboBox.Text;
             string videoClosedSetting = VideoClosedCombobox.Text;
-            SaveSettings(path,videoStartedSetting,videoClosedSetting);
+
+            if (path != "")
+            {
+                path += '\\';
+                SaveSettings(path, videoStartedSetting, videoClosedSetting);
+            }
+            else
+                System.Windows.MessageBox.Show("Please enter a valid path");
+
         }
 
         public void SaveSettings(string path,string videoStartedSetting,string videoClosedSetting)
         {
             string tempAppName = appName.Replace(".exe", "");
 
-            using (StreamWriter sw = new StreamWriter(path + tempAppName + ".txt"))
+            string tempPath = path + "\\" + tempAppName + ".txt";
+            Console.WriteLine("thís: " + tempPath);
+            using (StreamWriter sw = new StreamWriter(tempPath,false))
             {
+                Console.WriteLine("writing..");
                 sw.WriteLine("VideoStartedSetting: " + videoStartedSetting);
                 sw.WriteLine("VideoClosedSetting: " + videoStartedSetting);
             }
 
             SetStartup();
+
+            string toRemove = "\\AutoDisplayChangerConfig";
+
+            int nr = appPath.IndexOf(toRemove);
+            Console.WriteLine(nr);
+            string temp = appPath.Substring(0, nr); //appPath.Remove(nr, toRemove.Length);
+
+            string src = temp + @"\AutoDisplayChanger\bin\Debug\AutoDisplayChanger.exe";
+            Console.WriteLine(src);
+            try
+            {
+                File.Copy(src, path + "AutoDisplayChanger.exe",true);
+            }
+            catch
+            {
+               System.Windows.MessageBox.Show("Please enter a valid path");
+            }
         }
 
         private void SetStartup()
         {
-            RegistryKey rk = Registry.CurrentUser.OpenSubKey
-                ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);            
+            RegistryKey rk = Registry.CurrentUser.CreateSubKey
+                ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
             if (RunAtStartUpCheckbox.IsChecked.Value)
-                rk.SetValue(appName, appPath);
+            {
+                rk.SetValue("AutoDisplayChanger", PathTextBox.Text + "\\AutoDisplayChanger.exe");
+
+                Console.WriteLine("Setting register value");
+            }
             else
-                rk.DeleteValue(appName, false);
+                rk.DeleteValue("AutoDisplayChanger.exe", false);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog
+            {
+                IsFolderPicker = true
+            };
+            using (dialog)
+            {
+                if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                {
+                    PathTextBox.Text = dialog.FileName;
+                }
+            }
         }
     }
 }
