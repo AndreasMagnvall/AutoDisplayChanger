@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows;
 
 namespace AutoDisplayChanger
 {
@@ -54,13 +55,20 @@ namespace AutoDisplayChanger
 
         private static void ReadSettings()
         {
-            using (StreamReader sr = new StreamReader("AutoDisplayChangerConfig.txt"))
+            try
             {
-                string buffer = sr.ReadLine();
+                using (StreamReader sr = new StreamReader("AutoDisplayChangerConfig.txt"))
+                {
+                    string buffer = sr.ReadLine();
 
-                onVideoStartedSetting = buffer.Replace("VideoStartedSetting:", "");
-                buffer = sr.ReadLine();
-                onVideoClosedSetting = buffer.Replace("VideoClosedSetting", "");
+                    onVideoStartedSetting = buffer.Replace("VideoStartedSetting:", "");
+                    buffer = sr.ReadLine();
+                    onVideoClosedSetting = buffer.Replace("VideoClosedSetting", "");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error: Could not find configuration file");
             }
         }
     }  
