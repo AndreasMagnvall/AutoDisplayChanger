@@ -32,7 +32,7 @@ namespace AutoDisplayChangerConfig
         {
             InitializeComponent();
             VideoStartedComboBox.SelectedIndex = 0;
-            VideoClosedCombobox.SelectedIndex = 0;
+            VideoClosedComboBox.SelectedIndex = 0;
 
             appName = AppDomain.CurrentDomain.FriendlyName;
             appPath = AppDomain.CurrentDomain.BaseDirectory + appName;
@@ -41,8 +41,8 @@ namespace AutoDisplayChangerConfig
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string path = PathTextBox.Text;
-            string videoStartedSetting = VideoStartedComboBox.Text;
-            string videoClosedSetting = VideoClosedCombobox.Text;
+            string videoStartedSetting = CheckSetting(VideoStartedComboBox.Text);
+            string videoClosedSetting = CheckSetting(VideoClosedComboBox.Text);
 
             if (path != "")
             {
@@ -52,6 +52,22 @@ namespace AutoDisplayChangerConfig
             else
                 System.Windows.MessageBox.Show("Please enter a valid path");
 
+        }
+
+        private string CheckSetting(string text)
+        {
+            switch (text)
+            {
+                default: return ""; 
+                case "Primary screen":
+                    return "internal";
+                case "Mirror":
+                    return "clone";
+                case "Extend":
+                    return "extend";
+                case "Secondary screen":
+                    return "external";
+            }
         }
 
         public void SaveSettings(string path,string videoStartedSetting,string videoClosedSetting)
@@ -64,7 +80,7 @@ namespace AutoDisplayChangerConfig
             {
                 Console.WriteLine("writing..");
                 sw.WriteLine("VideoStartedSetting: " + videoStartedSetting);
-                sw.WriteLine("VideoClosedSetting: " + videoStartedSetting);
+                sw.WriteLine("VideoClosedSetting: " + videoClosedSetting);
             }
 
             SetStartup();

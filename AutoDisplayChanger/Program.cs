@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows;
+using System.Threading;
 
 namespace AutoDisplayChanger
 {
@@ -26,18 +27,30 @@ namespace AutoDisplayChanger
 
             ReadSettings();
 
-            while (started == false)
+            while (true)
             {
-                System.Threading.Thread.Sleep(1000);
-
+                Thread.Sleep(1000);
+                Console.WriteLine("test");
                 if (Process.GetProcessesByName("vlc").Length > 0)
                 {
-                    started = true;
-                    DisplayChanger.Start();                 
+                    Console.WriteLine("test2");
+                  
+                        Thread th = new Thread (() =>
+                            {
+                                Console.WriteLine("test22");
+                                DisplayChanger.Start();
+                                Console.WriteLine("status is : " + DisplayChanger.Responding);
+                            });
+                    th.Start();
                 }
                 else
                 {
-                    started = false;
+                 //   started = false;
+                    try
+                    {
+                     //   DisplayChanger.Kill();
+                    }
+                    catch { }
                 }
             }                  
         }
@@ -49,7 +62,7 @@ namespace AutoDisplayChanger
             CreateNoWindow = true,
             WindowStyle = ProcessWindowStyle.Hidden,
             FileName = @"C:\Windows\Sysnative\DisplaySwitch.exe",
-            Arguments = "/" + onVideoStartedSetting
+            Arguments = "/" + "extend"
         }
         };
 
