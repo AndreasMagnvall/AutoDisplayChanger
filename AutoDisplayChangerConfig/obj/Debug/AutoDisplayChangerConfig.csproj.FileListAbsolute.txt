@@ -15,3 +15,4 @@ C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDi
 C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\AutoDisplayChangerConfig.pdb
 C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\bin\Debug\Microsoft.WindowsAPICodePack.dll
 C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChangerConfig\obj\Debug\AutoDisplayChangerConfig.csproj.CopyComplete

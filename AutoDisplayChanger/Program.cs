@@ -31,28 +31,38 @@ namespace AutoDisplayChanger
             {
                 Thread.Sleep(1000);
                 Console.WriteLine("test");
-                if (Process.GetProcessesByName("vlc").Length > 0)
+                if (started == false)
                 {
-                    Console.WriteLine("test2");
-                  
-                        Thread th = new Thread (() =>
-                            {
-                                Console.WriteLine("test22");
-                                DisplayChanger.Start();
-                                Console.WriteLine("status is : " + DisplayChanger.Responding);
-                            });
-                    th.Start();
+                    if (Process.GetProcessesByName("vlc").Length > 0)
+                    {
+                        OpenMicrosoftWord();
+                        Console.WriteLine("test2");
+                        started = true;
+                        //   Process.Start(@"C:\Windows\Sysnative\DisplaySwitch.exe", "/extend");
+             //           Process.Start(DisplayChanger);
+                        Thread th = new Thread(() =>
+                           {
+                               Console.WriteLine("test22");
+                               DisplayChanger.Start();
+                               Console.WriteLine("status is : " + DisplayChanger.Responding);
+                           });
+                  //      th.Start();
+                    }
                 }
                 else
                 {
-                 //   started = false;
-                    try
-                    {
-                     //   DisplayChanger.Kill();
-                    }
-                    catch { }
+
                 }
             }                  
+        }
+
+        static void OpenMicrosoftWord()
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = @"C:\Windows\Sysnative\DisplaySwitch.exe";
+            startInfo.Arguments = "/clone";
+            Process.Start(startInfo);
+         //   startInfo.
         }
 
         private static Process DisplayChanger = new Process
