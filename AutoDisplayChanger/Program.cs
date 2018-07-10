@@ -60,8 +60,8 @@ namespace AutoDisplayChanger
         {
             Console.WriteLine("reading");
             try
-            {                
-                using (StreamReader sr = new StreamReader("AutoDisplayChangerConfig.txt"))
+            {
+                using (StreamReader sr = new StreamReader(AppDomain.CurrentDomain.BaseDirectory + "\\AutoDisplayChangerConfig.txt"))
                 {
                     string buffer = sr.ReadLine();
 
@@ -70,9 +70,10 @@ namespace AutoDisplayChanger
                     onVideoClosedSetting = buffer.Replace("VideoClosedSetting: ", "");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Error: Could not find configuration file");
+                //   MessageBox.Show("Error: Could not find configuration file");
+                MessageBox.Show(ex.ToString());
             }
         }
     }  
