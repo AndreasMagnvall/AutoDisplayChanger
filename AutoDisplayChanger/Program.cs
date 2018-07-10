@@ -31,7 +31,6 @@ namespace AutoDisplayChanger
             {              
                 if (Process.GetProcessesByName("vlc").Length > 0 && started == false)
                 {
-                    Console.WriteLine(started);
                     ReadSettings();
                     DisplayChanger.StartInfo.Arguments = "/" + onVideoStartedSetting;                   
                     DisplayChanger.Start();
@@ -59,7 +58,6 @@ namespace AutoDisplayChanger
 
         private static void ReadSettings()
         {
-            Console.WriteLine("reading");
             try
             {
                 using (StreamReader sr = new StreamReader(AppDomain.CurrentDomain.BaseDirectory + "\\AutoDisplayChangerConfig.txt"))
