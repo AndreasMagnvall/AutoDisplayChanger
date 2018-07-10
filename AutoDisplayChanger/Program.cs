@@ -30,39 +30,20 @@ namespace AutoDisplayChanger
             while (true)
             {
                 Thread.Sleep(1000);
-                Console.WriteLine("test");
-                if (started == false)
+               
+                if (Process.GetProcessesByName("vlc").Length > 0 && started == false)
                 {
-                    if (Process.GetProcessesByName("vlc").Length > 0)
-                    {
-                        OpenMicrosoftWord();
-                        Console.WriteLine("test2");
-                        started = true;
-                        //   Process.Start(@"C:\Windows\Sysnative\DisplaySwitch.exe", "/extend");
-             //           Process.Start(DisplayChanger);
-                        Thread th = new Thread(() =>
-                           {
-                               Console.WriteLine("test22");
-                               DisplayChanger.Start();
-                               Console.WriteLine("status is : " + DisplayChanger.Responding);
-                           });
-                  //      th.Start();
-                    }
+                    ReadSettings();
+                    DisplayChanger.StartInfo.Arguments = "/" + onVideoStartedSetting;
+                    started = true;
+                    DisplayChanger.Start();
                 }
-                else
+                else if (Process.GetProcessesByName("vlc").Length == 0)
                 {
-
-                }
+                    Console.WriteLine("Program not running");
+                    started = false;
+                }                
             }                  
-        }
-
-        static void OpenMicrosoftWord()
-        {
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = @"C:\Windows\Sysnative\DisplaySwitch.exe";
-            startInfo.Arguments = "/clone";
-            Process.Start(startInfo);
-         //   startInfo.
         }
 
         private static Process DisplayChanger = new Process
@@ -72,7 +53,6 @@ namespace AutoDisplayChanger
             CreateNoWindow = true,
             WindowStyle = ProcessWindowStyle.Hidden,
             FileName = @"C:\Windows\Sysnative\DisplaySwitch.exe",
-            Arguments = "/" + "extend"
         }
         };
 

@@ -27,7 +27,6 @@ namespace AutoDisplayChangerConfig
         string appName;
         string appPath;
 
-
         public MainWindow()
         {
             InitializeComponent();
@@ -89,7 +88,7 @@ namespace AutoDisplayChangerConfig
 
             int nr = appPath.IndexOf(toRemove);
             Console.WriteLine(nr);
-            string temp = appPath.Substring(0, nr); //appPath.Remove(nr, toRemove.Length);
+            string temp = appPath.Substring(0, nr); 
 
             string src = temp + @"\AutoDisplayChanger\bin\Debug\AutoDisplayChanger.exe";
             Console.WriteLine(src);
@@ -115,7 +114,9 @@ namespace AutoDisplayChangerConfig
                 Console.WriteLine("Setting register value");
             }
             else
+            {
                 rk.DeleteValue("AutoDisplayChanger.exe", false);
+            }           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

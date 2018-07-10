@@ -5,3 +5,5 @@ C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDi
 C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChanger\obj\Debug\AutoDisplayChanger.csproj.CoreCompileInputs.cache
 C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChanger\obj\Debug\AutoDisplayChanger.exe
 C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChanger\obj\Debug\AutoDisplayChanger.pdb
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChanger\bin\Debug\AutoDisplayChanger.exe.CodeAnalysisLog.xml
+C:\Users\Andreas\Documents\Visual Studio 2017\Projects\AutoDisplayChanger\AutoDisplayChanger\bin\Debug\AutoDisplayChanger.exe.lastcodeanalysissucceeded
