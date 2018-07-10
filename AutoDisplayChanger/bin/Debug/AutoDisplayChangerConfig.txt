@@ -1,2 +1,2 @@
-VideoStartedSetting:Primary screen
-VideoClosedSetting:Primary screen
+VideoStartedSetting: clone
+VideoClosedSetting: internal

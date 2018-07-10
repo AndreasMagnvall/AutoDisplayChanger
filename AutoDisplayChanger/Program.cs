@@ -58,15 +58,16 @@ namespace AutoDisplayChanger
 
         private static void ReadSettings()
         {
+            Console.WriteLine("reading");
             try
-            {
+            {                
                 using (StreamReader sr = new StreamReader("AutoDisplayChangerConfig.txt"))
                 {
                     string buffer = sr.ReadLine();
 
-                    onVideoStartedSetting = buffer.Replace("VideoStartedSetting:", "");
+                    onVideoStartedSetting = buffer.Replace("VideoStartedSetting: ", "");
                     buffer = sr.ReadLine();
-                    onVideoClosedSetting = buffer.Replace("VideoClosedSetting", "");
+                    onVideoClosedSetting = buffer.Replace("VideoClosedSetting: ", "");
                 }
             }
             catch
