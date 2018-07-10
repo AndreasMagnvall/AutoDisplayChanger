@@ -43,14 +43,15 @@ namespace AutoDisplayChangerConfig
             string videoStartedSetting = CheckSetting(VideoStartedComboBox.Text);
             string videoClosedSetting = CheckSetting(VideoClosedComboBox.Text);
 
-            if (path != "")
+            try
             {
                 path += '\\';
                 SaveSettings(path, videoStartedSetting, videoClosedSetting);
             }
-            else
+            catch
+            {
                 System.Windows.MessageBox.Show("Please enter a valid path");
-
+            }
         }
 
         private string CheckSetting(string text)

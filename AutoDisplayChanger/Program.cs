@@ -25,24 +25,25 @@ namespace AutoDisplayChanger
             appName = AppDomain.CurrentDomain.FriendlyName;
             appPath = AppDomain.CurrentDomain.BaseDirectory + appName;
 
-            ReadSettings();
+        //    ReadSettings();
 
             while (true)
-            {
-                Thread.Sleep(1000);
-               
+            {              
                 if (Process.GetProcessesByName("vlc").Length > 0 && started == false)
                 {
+                    Console.WriteLine(started);
                     ReadSettings();
-                    DisplayChanger.StartInfo.Arguments = "/" + onVideoStartedSetting;
-                    started = true;
+                    DisplayChanger.StartInfo.Arguments = "/" + onVideoStartedSetting;                   
                     DisplayChanger.Start();
+                    started = true;
                 }
-                else if (Process.GetProcessesByName("vlc").Length == 0)
+                else if (Process.GetProcessesByName("vlc").Length == 0 && started == true)
                 {
-                    Console.WriteLine("Program not running");
+                    DisplayChanger.StartInfo.Arguments = "/" + onVideoClosedSetting;
+                    DisplayChanger.Start();
                     started = false;
-                }                
+                }
+                Thread.Sleep(1000);
             }                  
         }
 
@@ -72,7 +73,6 @@ namespace AutoDisplayChanger
             }
             catch (Exception ex)
             {
-                //   MessageBox.Show("Error: Could not find configuration file");
                 MessageBox.Show(ex.ToString());
             }
         }
